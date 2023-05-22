@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  postgres:
+    container_name: ddb_tut
+    restart: always
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      PGDATA: /var/lib/postgresql/data/PGDATA
+      POSTGRES_PASSWORD: "pass"
+    volumes:
+      - .:/var/lib/postgresql/data
+
